@@ -83,7 +83,7 @@ module.exports = {
             if (err)
                 res.send(err)
             else if (!article)
-                res.send(404)
+                res.sendStatus(404)
             else
                 res.send(article)
             next()            
