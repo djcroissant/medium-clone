@@ -1,3 +1,6 @@
+/** load .env file */
+require('dotenv').config()
+
 /** require dependencies */
 const express = require("express")
 const routes = require('./routes/')
@@ -13,9 +16,9 @@ const url = process.env.MONGODB_URI || "mongodb://localhost:27017/medium"
 
 /** configure cloudinary */
 cloudinary.config({
-    cloud_name: 'YOUR_CLOUDINARY_NAME_HERE',
-    api_key: 'YOUR_CLOUDINARY_API_KEY_HERE',
-    api_secret: 'YOUR_CLOUDINARY_API_SECRET_HERE'
+    cloud_name: process.env.CLOUDINARY_NAME,
+    api_key: process.env.CLOUDINARY_API_KEY,
+    api_secret: process.env.CLOUDINARY_API_SECRET
 })
 
 /** connect to MongoDB datastore */
